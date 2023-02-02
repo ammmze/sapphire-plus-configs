@@ -1,0 +1,1 @@
+SUBSYSTEM=="spidev",NAME="spidev%n.%n",OWNER="root",GROUP="dialout",MODE="0660"

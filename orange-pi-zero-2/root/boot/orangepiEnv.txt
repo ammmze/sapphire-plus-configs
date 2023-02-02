@@ -1,0 +1,12 @@
+verbosity=1
+bootlogo=false
+console=both
+disp_mode=1920x1080p60
+overlay_prefix=sun50i-h616
+rootdev=UUID=5dd5b836-fb32-4678-908e-d23f7a028780
+rootfstype=ext4
+overlays=uart5 spi-spidev spi-add-cs1
+param_spidev_spi_bus=1
+param_spidev_spi_cs=1
+param_spidev_max_freq=5000000
+usbstoragequirks=0x2537:0x1066:u,0x2537:0x1068:u

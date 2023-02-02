@@ -1,0 +1,1 @@
+SUBSYSTEM=="gpio",NAME="gpiochip%n",OWNER="root",GROUP="dialout",MODE="0660"
