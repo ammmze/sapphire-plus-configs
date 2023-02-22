@@ -2,7 +2,7 @@
 
 KLIPPER_CONFIG_DIR=~/printer_data/config
 
-mkdir -p "${KLIPPER_CONFIG_DIR}/modules"
+mkdir -p "${KLIPPER_CONFIG_DIR}/modules.d"
 
 if [ ! -d ~/print_area_bed_mesh ]; then
     git clone https://github.com/Turge08/print_area_bed_mesh.git ~/print_area_bed_mesh
