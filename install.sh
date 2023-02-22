@@ -6,8 +6,8 @@ mkdir -p "${KLIPPER_CONFIG_DIR}/modules.d"
 
 if [ ! -d ~/Klipper-Adaptive-Meshing-Purging ]; then
     git clone https://github.com/kyleisah/Klipper-Adaptive-Meshing-Purging.git ~/Klipper-Adaptive-Meshing-Purging
-    ln -s ~/Klipper-Adaptive-Meshing-Purging/Configuration "${KLIPPER_CONFIG_DIR}/modules/KAMP"
-    echo '[include modules.d/KAMP/*.cfg]' > "${KLIPPER_CONFIG_DIR}/modules/KAMP.cfg"
+    ln -s ~/Klipper-Adaptive-Meshing-Purging/Configuration "${KLIPPER_CONFIG_DIR}/modules.d/KAMP"
+    echo '[include modules.d/KAMP/*.cfg]' > "${KLIPPER_CONFIG_DIR}/modules.d/KAMP.cfg"
 fi
 
 if [ ! -d ~/klipper-led_effect ]; then
