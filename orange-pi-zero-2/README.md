@@ -19,6 +19,14 @@ To enable UART5, it must be added to the `overlays` in `/boot/orangepiEnv.txt`. 
 overlays=uart5
 ```
 
+#### Permissions
+
+To ensure that device has the appropriate permissions to be used by klipper (and assuming that the user running klipper is in the `dialout` group), add a udev rule by creating the file `/etc/udev/rules.d/99-gpio.rules` with the following contents:
+
+```
+SUBSYSTEM=="gpio",NAME="gpiochip%n",OWNER="root",GROUP="dialout",MODE="0660"
+```
+
 #### Physical Connection
 
 The phsyical connection between the the Pi and the main board is as follows:
@@ -47,6 +55,14 @@ param_spidev_spi_cs=1
 ```
 
 > Not sure `spi-add-cs1` was required. I added it before I had found the manual and was having issues and then found those `param_*` options that were needed.
+
+#### Permissions
+
+To ensure that device has the appropriate permissions to be used by klipper (and assuming that the user running klipper is in the `dialout` group), add a udev rule by creating the file `/etc/udev/rules.d/99-spidev.rules` with the following contents:
+
+```
+SUBSYSTEM=="spidev",NAME="spidev%n.%n",OWNER="root",GROUP="dialout",MODE="0660"
+```
 
 #### Physical Connection
 
