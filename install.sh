@@ -4,9 +4,10 @@ KLIPPER_CONFIG_DIR=~/printer_data/config
 
 mkdir -p "${KLIPPER_CONFIG_DIR}/modules.d"
 
-if [ ! -d ~/print_area_bed_mesh ]; then
-    git clone https://github.com/Turge08/print_area_bed_mesh.git ~/print_area_bed_mesh
-    ln -sf ~/print_area_bed_mesh/print_area_bed_mesh.cfg "${KLIPPER_CONFIG_DIR}/modules/print_area_bed_mesh.cfg"
+if [ ! -d ~/Klipper-Adaptive-Meshing-Purging ]; then
+    git clone https://github.com/kyleisah/Klipper-Adaptive-Meshing-Purging.git ~/Klipper-Adaptive-Meshing-Purging
+    ln -s ~/Klipper-Adaptive-Meshing-Purging/Configuration "${KLIPPER_CONFIG_DIR}/modules/KAMP"
+    echo '[include modules.d/KAMP/*.cfg]' > "${KLIPPER_CONFIG_DIR}/modules/KAMP.cfg"
 fi
 
 if [ ! -d ~/klipper-led_effect ]; then
