@@ -3,6 +3,8 @@
 The OrangePi Zero 2 board is a relatively in-expensive and accessible pi alternative. 
 I am using it to run klipper for this printer.
 
+Manual provided by OrangePi can be found [here](https://drive.google.com/file/d/1T6ZbnrYIEGc89uKukrdOw8ESX8CYfmTY/view?usp=share_link).
+
 ## Connections
 
 ### Printer serial connection
@@ -43,6 +45,8 @@ overlays=spi-spidev spi-add-cs1
 param_spidev_spi_bus=1
 param_spidev_spi_cs=1
 ```
+
+> Not sure `spi-add-cs1` was required. I added it before I had found the manual and was having issues and then found those `param_*` options that were needed.
 
 #### Physical Connection
 
