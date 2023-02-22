@@ -28,7 +28,7 @@ The phsyical connection between the the Pi and the main board is as follows:
 | UART5 TX |     |                 |
 | UART5 RX |     |                 |
 
-### ADXL345 (Work in progress)
+### ADXL345
 
 An accelerometer can be used to measure resonances in the printer. 
 This Pi board provides an SPI (serial peripheral interface) that can be used to connect to
@@ -42,4 +42,29 @@ To enable SPI1, it must be added to the `overlays` in `/boot/orangepiEnv.txt` al
 overlays=spi-spidev spi-add-cs1
 param_spidev_spi_bus=1
 param_spidev_spi_cs=1
+```
+
+#### Physical Connection
+
+The phsyical connection between the the Pi and the ADXSL345 is as follows:
+
+| Pi   | ADXL345 |
+| ---- | ------- |
+| 5v*  | VCC     |
+| GND  | GND     |
+| CS   | CS      |
+| MOSI | SDA     |
+| MISO | SCO     |
+| CLK  | SCL     |
+
+> _5v*_ ... I think some ADXL345 modules require less than 5v, so you may want to connect to the 3.3v pin instead.
+
+#### Klipper config
+
+To configure klipper to use the ADXL345 connected to the Orange Pi Zero 2, use the following config:
+```ini
+[adxl345]
+cs_pin: host:None
+spi_speed: 5000000
+spi_bus: spidev1.1
 ```
