@@ -1,0 +1,6 @@
+Klipper-Adaptive-Meshing-Purging2:
+    type: "git-repo"
+    url: "https://github.com/kyleisah/Klipper-Adaptive-Meshing-Purging.git"
+    exact: true
+    stripComponents: 0
+    refreshPeriod: "24h"
