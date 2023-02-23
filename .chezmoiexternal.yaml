@@ -1,6 +1,13 @@
-Klipper-Adaptive-Meshing-Purging2:
-    type: "git-repo"
-    url: "https://github.com/kyleisah/Klipper-Adaptive-Meshing-Purging.git"
-    exact: true
-    stripComponents: 0
-    refreshPeriod: "24h"
+Klipper-Adaptive-Meshing-Purging:
+  type: git-repo
+  url: https://github.com/kyleisah/Klipper-Adaptive-Meshing-Purging.git
+  exact: true
+  stripComponents: 0
+  refreshPeriod: 24h
+
+klipper-led_effect:
+  type: git-repo
+  url: https://github.com/julianschill/klipper-led_effect.git
+  exact: true
+  stripComponents: 0
+  refreshPeriod: 24h
