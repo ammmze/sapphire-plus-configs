@@ -11,3 +11,10 @@ klipper-led_effect:
   exact: true
   stripComponents: 0
   refreshPeriod: 24h
+
+jschuh-klipper-macros:
+  type: git-repo
+  url: https://github.com/jschuh/klipper-macros.git
+  exact: true
+  stripComponents: 0
+  refreshPeriod: 24h
