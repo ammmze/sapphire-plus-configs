@@ -18,3 +18,10 @@ jschuh-klipper-macros:
   exact: true
   stripComponents: 0
   refreshPeriod: 24h
+
+klicky-probe:
+  type: git-repo
+  url: https://github.com/jlas1/Klicky-Probe.git
+  exact: true
+  stripComponents: 0
+  refreshPeriod: 24h
