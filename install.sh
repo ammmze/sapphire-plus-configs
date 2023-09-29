@@ -13,3 +13,5 @@ if [ ! -d ~/klipper-led_effect ]; then
     git clone https://github.com/julianschill/klipper-led_effect.git ~/klipper-led_effect
     ( cd ~/klipper-led_effect && ./install-led_effect.sh )
 fi
+
+# TODO: install for sonar

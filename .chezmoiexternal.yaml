@@ -18,3 +18,17 @@ jschuh-klipper-macros:
   exact: true
   stripComponents: 0
   refreshPeriod: 24h
+
+mainsail-config:
+  type: git-repo
+  url: https://github.com/mainsail-crew/mainsail-config.git
+  exact: true
+  stripComponents: 0
+  refreshPeriod: 24h
+
+sonar:
+  type: git-repo
+  url: https://github.com/mainsail-crew/sonar.git
+  exact: true
+  stripComponents: 0
+  refreshPeriod: 24h
