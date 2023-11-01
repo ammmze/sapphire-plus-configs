@@ -32,3 +32,10 @@ sonar:
   exact: true
   stripComponents: 0
   refreshPeriod: 24h
+
+obico:
+  type: git-repo
+  url: https://github.com/TheSpaghettiDetective/moonraker-obico.git
+  exact: true
+  stripComponents: 0
+  refreshPeriod: 24h
