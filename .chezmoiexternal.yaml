@@ -33,6 +33,13 @@ sonar:
   stripComponents: 0
   refreshPeriod: 24h
 
+KlipperScreen:
+  type: git-repo
+  url: https://github.com/KlipperScreen/KlipperScreen.git
+  exact: true
+  stripComponents: 0
+  refreshPeriod: 24h
+
 obico:
   type: git-repo
   url: https://github.com/TheSpaghettiDetective/moonraker-obico.git
