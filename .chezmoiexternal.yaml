@@ -46,3 +46,10 @@ obico:
   exact: true
   stripComponents: 0
   refreshPeriod: 24h
+
+katapult:
+  type: git-repo
+  url: https://github.com/Arksine/katapult.git
+  exact: true
+  stripComponents: 0
+  refreshPeriod: 24h
