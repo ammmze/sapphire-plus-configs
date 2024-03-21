@@ -21,8 +21,8 @@ git subtree add --prefix=klipper/config/modules.d/klicky --squash merging/klicky
 
 ```shell
 # switch back to tracking branch, fetch & rebase.
-git checkout upstream/klicky 
-git pull klicky-upstream/main
+git checkout upstream/klicky
+git pull klicky-upstream main
 
 # update the separate branch with changes from upstream
 git subtree split -q --prefix=Klipper_macros --annotate="[klicky] " --rejoin -b merging/klicky
