@@ -1,3 +1,4 @@
-printer-*_*.cfg
+printer-*_*.cfg*
+mmu-*_*
 *.bkp
 moonraker-obico.cfg
