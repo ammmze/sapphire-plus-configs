@@ -40,7 +40,7 @@ make KCONFIG_CONFIG=config.robin-nano1.2 OUT=out.robin-nano1.2/ -j4
 > Personally on my SP5 w/o LCD screen I needed it to be "Robin_nano.bin"
 
 ### Compile and flash katapult
-
+sqrt(#corner_link_spacing^2 + #corner_link_spacing^2 − (2 * #corner_link_spacing * #corner_link_spacing * cos(180deg-((90deg-#slider_min_angle)*2))))
 #### Mellow SHTv2
 
 ```shell
@@ -50,6 +50,18 @@ make menuconfig KCONFIG_CONFIG=.shtv2.config OUT=shtv2.out/
 make KCONFIG_CONFIG=.shtv2.config OUT=shtv2.out/ -j4
 sudo service klipper stop
 sudo dfu-util -a 0 -D ~/katapult/shtv2.out/katapult.bin --dfuse-address 0x08000000:force:mass-erase:leave -d 314b:0106
+# proceed to compile/flash klipper
+```
+
+#### Mellow SHTv3
+
+```shell
+cd ~/katapult
+make clean KCONFIG_CONFIG=.shtv3.config OUT=shtv3.out/
+make menuconfig KCONFIG_CONFIG=.shtv3.config OUT=shtv3.out/
+make KCONFIG_CONFIG=.shtv3.config OUT=shtv3.out/ -j4
+sudo service klipper stop
+make KCONFIG_CONFIG=.shtv3.config OUT=shtv3.out/ FLASH_DEVICE=2e8a:0003 flash
 # proceed to compile/flash klipper
 ```
 
@@ -65,7 +77,25 @@ sudo make KCONFIG_CONFIG=config.ercfv1.1 OUT=out.ercfv1.1/ flash FLASH_DEVICE=31
 # proceed to compile/flash klipper
 ```
 
+#### BTT MMB
+
+```shell
+cd ~/katapult
+make clean KCONFIG_CONFIG=mmb.config OUT=mmb.out/
+make menuconfig KCONFIG_CONFIG=mmb.config OUT=mmb.out/
+make KCONFIG_CONFIG=mmb.config OUT=mmb.out/ -j4
+sudo service klipper stop
+make flash KCONFIG_CONFIG=mmb.config OUT=mmb.out/ FLASH_DEVICE=0483:df11
+# proceed to compile/flash klipper
+```
+
 ### Compile and flash klipper
+
+> [!NOTE]
+> To get canbus id use the following:
+> ```shell
+> ~/klippy-env/bin/python ~/klipper/scripts/canbus_query.py can0
+> ```
 
 #### Mellow SHTv2
 
@@ -76,6 +106,18 @@ make menuconfig KCONFIG_CONFIG=.shtv2.config OUT=shtv2.out/
 make KCONFIG_CONFIG=.shtv2.config OUT=shtv2.out/ -j4
 sudo service klipper stop
 python3 ~/katapult/scripts/flashtool.py -i can0 -f ~/klipper/shtv2.out/klipper.bin -u 333ba2572085 -v
+sudo service klipper start
+```
+
+#### Mellow SHTv3
+
+```shell
+cd ~/klipper
+make clean KCONFIG_CONFIG=.shtv3.config OUT=shtv3.out/
+make menuconfig KCONFIG_CONFIG=.shtv3.config OUT=shtv3.out/
+make KCONFIG_CONFIG=.shtv3.config OUT=shtv3.out/ -j4
+sudo service klipper stop
+python3 ~/katapult/scripts/flashtool.py -i can0 -f ~/klipper/shtv3.out/klipper.bin -u d9543e536c0a -v
 sudo service klipper start
 ```
 
@@ -90,5 +132,17 @@ make menuconfig KCONFIG_CONFIG=config.ercfv1.1 OUT=out.ercfv1.1/
 make KCONFIG_CONFIG=config.ercfv1.1 OUT=out.ercfv1.1/ -j4
 sudo service klipper stop
 python3 ~/katapult/scripts/flashtool.py -i can0 -f ~/klipper/out.ercfv1.1/klipper.bin -u 6e0a60194b42 -v
+sudo service klipper start
+```
+
+#### BTT MMB
+
+```shell
+cd ~/klipper
+make clean KCONFIG_CONFIG=mmb.config OUT=mmb.out/
+make menuconfig KCONFIG_CONFIG=mmb.config OUT=mmb.out/
+make KCONFIG_CONFIG=mmb.config OUT=mmb.out/ -j4
+sudo service klipper stop
+python3 ~/katapult/scripts/flashtool.py -i can0 -f ~/klipper/mmb.out/klipper.bin -u fab58e9403c7 -v
 sudo service klipper start
 ```
