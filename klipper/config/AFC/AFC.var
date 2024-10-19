@@ -1,0 +1,36 @@
+{
+    "Turtle_1": {
+        "leg1": {
+            "index": 1,
+            "material": "",
+            "spool_id": "",
+            "color": "",
+            "tool_loaded": false,
+            "hub_loaded": true
+        },
+        "leg2": {
+            "index": 2,
+            "material": "",
+            "spool_id": "",
+            "color": "",
+            "tool_loaded": false,
+            "hub_loaded": true
+        },
+        "leg3": {
+            "index": 3,
+            "material": "",
+            "spool_id": "",
+            "color": "",
+            "tool_loaded": false,
+            "hub_loaded": false
+        },
+        "leg4": {
+            "index": 4,
+            "material": "",
+            "spool_id": "",
+            "color": "",
+            "tool_loaded": false,
+            "hub_loaded": false
+        }
+    }
+}
